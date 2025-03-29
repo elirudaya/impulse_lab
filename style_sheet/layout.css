@@ -1,0 +1,1151 @@
+html, body{
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.main{
+    width: 100vw;
+    overflow-x: hidden;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.frame_1{
+    width: 100vw;
+    height: calc(900vw/14);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s;
+}
+
+.name{
+    width: calc(600vw/14);
+    height: calc(100vw/14);
+    left: calc(35vw/14);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.letter_box{
+    width: calc(100%/7);
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: none;
+}
+
+.letter_box p {
+    font-size: 4vw; 
+    font-family: Murs_Massive_Black_Italic; 
+    font-style: italic; 
+    transition: font-style 0.9s ease, font-family 0.7s ease; 
+}
+
+.letter_box:hover p {
+    font-style: normal; 
+    font-family: Murs_Wide_Regular; 
+}
+
+.buttons {
+    transition: color 0.3s;
+    display: flex;
+    gap: 2vw;
+    justify-content: center;
+    padding: 5vw;
+}
+
+.button_1{
+    width: calc(300vw/14);
+    height: calc(300vw/14);
+    position: absolute;
+    left: calc(500vw/14);
+    bottom: calc(500vw/14);
+    font-family: Murs_Wide_Regular;
+    font-style: normal;
+    font-size: 1vw;
+    cursor: pointer;
+}
+
+.button_2{
+    width: calc(300vw/14);
+    height: calc(300vw/14);
+    position: absolute;
+    right: calc(300vw/14);
+    bottom: calc(500vw/14);
+    font-family: Murs_Wide_Regular;
+    font-style: normal;
+    font-size: 1vw;
+    cursor: pointer;
+}
+
+.button_3{
+    width: calc(100vw/14);
+    height: calc(100vw/14);
+    position: absolute;
+    left: calc(330vw/14);
+    top: calc(700vw/14);
+    font-family: Murs_Wide_Regular;
+    font-style: normal;
+    font-size: 1vw;
+    cursor: pointer;
+    user-select: none;
+}
+
+.button_3:hover p {
+    font-size: 2vw;
+    transform: translateY(-1vw);
+}
+
+.button_3:active{
+    transform: translateY(0);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+}
+
+.modal_window {
+    display: none;
+    position: fixed;
+    top: calc(450vw/14);
+    left: calc(700vw/14);
+    transform: translate(-50%, -50%);
+    width: calc(1000vw/14);
+    background-color: white;
+    border-radius: 3vw;
+    box-shadow: 0 2vw 10vw rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    font-size: 2vw;
+}
+
+.window_content {
+    padding: 10vw;
+    position: relative;
+    font-family: 'Murs_Wide_Regular';
+    font-size: 1vw;
+}
+
+.close_window {
+    position: absolute;
+    top: calc(30vw/14);
+    right: calc(30vw/14);
+    font-size: 2vw;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close_window:hover {
+    color: #333;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+.scrollable_content {
+    overflow-y: auto;
+    max-height: 60vh;
+    padding: 1vw;
+    margin-top: 1.5vw;
+    border-top: 1vw solid white;
+}
+
+.scrollable_content::-webkit-scrollbar {
+    width: 1vw;
+    opacity: 0.2;
+}
+
+.scrollable_content::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 2vw;
+}
+
+.button_4{
+    width: calc(200vw/14);
+    height: calc(100vw/14);
+    position: absolute;
+    left: calc(620vw/14);
+    top: calc(700vw/14);
+    font-family: Murs_Wide_Regular;
+    font-style: normal;
+    font-size: 1vw;
+    cursor: pointer;
+}
+
+.button_4:active{
+    transform: translateY(0);
+}
+
+.button_4:hover p{
+    font-size: 2vw;
+    transform: translateY(-1vw);
+}
+
+.button_5{
+    width: calc(200vw/14);
+    height: calc(100vw/14);
+    position: absolute;
+    right: calc(290vw/14);
+    top: calc(700vw/14);
+    font-family: Murs_Wide_Regular;
+    font-style: normal;
+    font-size: 1vw;
+    cursor: pointer;
+}
+
+.button_5:hover p{
+    font-size: 2vw;
+    transform: translateY(-1vw);
+}
+
+.button_5:active{
+    transform: translateY(0);
+}
+
+.device_window{
+    width: calc(550vw/14);
+    height: calc(450vw/14);
+    position: absolute;
+    left: calc(120vw/14);
+    top: calc(80vw/14);
+    visibility: hidden;
+    background-color: rgba(217, 217, 217, 0.81);
+    border-radius: 4vw;
+    cursor: pointer;
+    transition: all 2s ease-out;
+}
+
+.device{
+    width: calc(480vw/14);
+    height: calc(320vw/14);
+    position: absolute;
+    left: calc(20vw/14);
+    top: calc(20vw/14);
+    background-color: white;
+    z-index: 1000;
+}
+
+.device_text {
+    font-family: 'Murs_Wide_Regular';
+    font-size: 1vw;
+    position: absolute;
+    width: calc(460vw/14);
+    left: calc(10vw/14);
+}
+
+.capsule_window{
+    width: calc(550vw/14);
+    height: calc(450vw/14);
+    position: absolute;
+    right: calc(120vw/14);
+    top: calc(80vw/14);
+    visibility: hidden;
+    background-color: rgba(217, 217, 217, 0.81);
+    border-radius: 4vw;
+    cursor: pointer;
+    transition: all 2s ease-out;
+}
+
+.capsule{
+    width: calc(480vw/14);
+    height: calc(320vw/14);
+    position: absolute;
+    left: calc(20vw/14);
+    top: calc(20vw/14);
+    background-color: white;
+}
+
+.capsule_photo{
+    width: calc(400vw/14);
+    height: calc(250vw/14);
+    top: calc(80vw/14);
+    left: calc(30vw/14);
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    z-index: 1200;
+}
+
+.lab_text{
+    font-family: 'Murs_Wide_Regular';
+    font-size: 1vw;
+    position: absolute;
+    width: calc(460vw/14);
+    left: calc(10vw/14);
+}
+
+.frame_2{
+    width: 100%;
+    height: calc(900vw/14);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clocks{
+    width: calc(700vw/14);
+    height: calc(600vw/14);
+    position: absolute;
+    left: calc(5vw/14);
+    top: calc(150vw/14);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.clock_center{
+    width: calc(50vw/14); 
+    height: calc(50vw/14); 
+    position: absolute;
+    left: calc(330vw/14);
+    top: calc(420vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    z-index: 100;
+}
+
+.clock_center:hover {
+    transform: scale(2);
+}
+
+.hour_hand {
+    width: calc(140vw/14);
+    height: calc(30vw/14);
+    position: absolute;
+    left: calc(340vw/14); 
+    top: calc(430vw/14); 
+    background-color: black;
+    border-start-start-radius: 50%;
+    border-end-start-radius: 50% ;
+    transform-origin: calc(10vw/14) calc(10vw/14); 
+    animation: rotateHour 20s linear infinite; 
+}
+
+.minute_hand {
+    width: calc(180vw/14);
+    height: calc(20vw/14);
+    position: absolute;
+    left: calc(340vw/14); 
+    top: calc(430vw/14); 
+    background-color: black;
+    border-start-start-radius: 50%;
+    border-end-start-radius: 50% ;
+    transform-origin: calc(10vw/14) calc(10vw/14); 
+    animation: rotateMinute 10s linear infinite; 
+}
+
+.fragments {
+    width: calc(700vw/14);
+    height: calc(850vw/14);
+    position: absolute;
+    right: calc(-1vw/14);
+    top: calc(5vw/14);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.f1 {
+    width: calc(200vw/14);
+    height: calc(60vw/14);
+    position: absolute;
+    top: calc(0vw/14);  
+    display: flex;
+    cursor: grabbing;
+}
+
+.f2 {
+    width: calc(290vw/14);
+    height: calc(60vw/14);
+    position: absolute;
+    right: calc(150vw/14);
+    top: calc(70vw/14);  
+    display: flex;
+    cursor: grabbing;
+}
+
+.f3 {
+    width: calc(310vw/14);
+    height: calc(60vw/14);
+    position: absolute;
+    right: calc(300vw/14);
+    top: calc(140vw/14);  
+    display: flex;
+    cursor: grabbing;
+}
+
+.f4 {
+    width: calc(400vw/14);
+    height: calc(60vw/14);
+    position: absolute;
+    right: calc(-80vw/14);
+    top: calc(210vw/14);  
+    display: flex;
+    cursor: grabbing;
+}
+
+.f5 {
+    width: calc(390vw/14);
+    height: calc(60vw/14);
+    position: absolute;
+    left: calc(2vw/14);
+    top: calc(280vw/14);  
+    display: flex;
+    cursor: grabbing;
+}
+
+.f6 {
+    width: calc(405vw/14);
+    height: calc(60vw/14);
+    position: absolute;
+    left: calc(75vw/14);
+    top: calc(350vw/14);  
+    display: flex;
+    cursor: grabbing;
+}
+
+.f7 {
+    width: calc(385vw/14);
+    height: calc(60vw/14);
+    position: absolute;
+    left: calc(-400vw/14);
+    top: calc(420vw/14);  
+    display: flex;
+    cursor: grabbing;
+}
+
+.f8 {
+    width: calc(190vw/14);
+    height: calc(60vw/14);
+    position: absolute;
+    right: calc(200vw/14);
+    top: calc(490vw/14);  
+    display: flex;
+    cursor: grabbing;
+}
+
+.f9 {
+    width: calc(230vw/14);
+    height: calc(60vw/14);
+    position: absolute;
+    left: calc(30vw/14);
+    top: calc(560vw/14);  
+    display: flex;
+    cursor: grabbing;
+}
+
+.f10 {
+    width: calc(210vw/14);
+    height: calc(60vw/14);
+    position: absolute;
+    right: calc(40vw/14);
+    top: calc(630vw/14);  
+    display: flex;
+    cursor: grabbing;
+}
+
+.f11 {
+    width: calc(250vw/14);
+    height: calc(60vw/14);
+    position: absolute;
+    right: calc(350vw/14);
+    top: calc(700vw/14);  
+    display: flex;
+    cursor: grabbing;
+}
+
+.f12 {
+    width: calc(360vw/14);
+    height: calc(60vw/14);
+    position: absolute;
+    right: calc(-1vw/14);
+    top: calc(770vw/14);  
+    display: flex;
+    cursor: grabbing;
+}
+ 
+ .frame_3 {
+    width: 100vw;
+    height: calc(530vw/14);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ .left_ellipses {
+    width: calc(30vw/14);
+    height: calc(500vw/14);
+    position: absolute;
+    left: calc(-110vw/14);
+    top: calc(5vw/14);
+    display: flex;
+    transition: background-color 0.5s ease;
+}
+
+.el_01 {
+    width: calc(170vw/14);
+    height: calc(170vw/14);
+    position: absolute;
+    left: calc(50vw/14);
+    top: calc(7vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_02 {
+    width: calc(45vw/14);
+    height: calc(45vw/14);
+    position: absolute;
+    left: calc(235vw/14);
+    top: calc(35vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_03 {
+    width: calc(50vw/14);
+    height: calc(50vw/14);
+    position: absolute;
+    left: calc(325vw/14);
+    top: calc(35vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_04 {
+    width: calc(140vw/14);
+    height: calc(140vw/14);
+    position: absolute;
+    left: calc(270vw/14);
+    top: calc(90vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_05 {
+    width: calc(145vw/14);
+    height: calc(145vw/14);
+    position: absolute;
+    left: calc(260vw/14);
+    bottom: calc(50vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_06 {
+    width: calc(130vw/14);
+    height: calc(130vw/14);
+    position: absolute;
+    left: calc(77vw/14);
+    top: calc(310vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_07 {
+    width: calc(40vw/14);
+    height: calc(40vw/14);
+    position: absolute;
+    left: calc(160vw/14);
+    top: calc(175vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_08 {
+    width: calc(40vw/14);
+    height: calc(40vw/14);
+    position: absolute;
+    left: calc(210vw/14);
+    top: calc(185vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_09 {
+    width: calc(65vw/14);
+    height: calc(65vw/14);
+    position: absolute;
+    left: calc(200vw/14);
+    top: calc(240vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_10 {
+    width: calc(30vw/14);
+    height: calc(30vw/14);
+    position: absolute;
+    left: calc(170vw/14);
+    top: calc(290vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_11 {
+    width: calc(40vw/14);
+    height: calc(40vw/14);
+    position: absolute;
+    left: calc(268vw/14);
+    top: calc(263vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_12 {
+    width: calc(40vw/14);
+    height: calc(40vw/14);
+    position: absolute;
+    left: calc(220vw/14);
+    top: calc(395vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_13 {
+    width: calc(40vw/14);
+    height: calc(40vw/14);
+    position: absolute;
+    left: calc(220vw/14);
+    top: calc(395vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_14 {
+    width: calc(35vw/14);
+    height: calc(35vw/14);
+    position: absolute;
+    left: calc(145vw/14);
+    bottom: calc(25vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_15 {
+    width: calc(40vw/14);
+    height: calc(40vw/14);
+    position: absolute;
+    left: calc(195vw/14);
+    bottom: calc(15vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.right_ellipses{
+    width: calc(30vw/14);
+    height: calc(500vw/14);
+    position: absolute;
+    right: calc(290vw/14);
+    top: calc(5vw/14);
+    display: flex;
+}
+
+.el_1 {
+    width: calc(170vw/14);
+    height: calc(170vw/14);
+    position: absolute;
+    left: calc(190vw/14);
+    top: calc(7vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_2 {
+    width: calc(45vw/14);
+    height: calc(45vw/14);
+    position: absolute;
+    left: calc(43vw/14);
+    top: calc(35vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_3 {
+    width: calc(50vw/14);
+    height: calc(50vw/14);
+    position: absolute;
+    left: calc(132vw/14);
+    top: calc(35vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_4 {
+    width: calc(140vw/14);
+    height: calc(140vw/14);
+    position: absolute;
+    left: calc(1vw/14);
+    top: calc(90vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_5 {
+    width: calc(145vw/14);
+    height: calc(145vw/14);
+    position: absolute;
+    left: calc(5vw/14);
+    bottom: calc(50vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_6 {
+    width: calc(130vw/14);
+    height: calc(130vw/14);
+    position: absolute;
+    left: calc(205vw/14);
+    top: calc(310vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_7 {
+    width: calc(40vw/14);
+    height: calc(40vw/14);
+    position: absolute;
+    left: calc(215vw/14);
+    top: calc(175vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_8 {
+    width: calc(40vw/14);
+    height: calc(40vw/14);
+    position: absolute;
+    left: calc(165vw/14);
+    top: calc(185vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_9 {
+    width: calc(65vw/14);
+    height: calc(65vw/14);
+    position: absolute;
+    left: calc(150vw/14);
+    top: calc(240vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_010 {
+    width: calc(30vw/14);
+    height: calc(30vw/14);
+    position: absolute;
+    left: calc(210vw/14);
+    top: calc(290vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_011 {
+    width: calc(40vw/14);
+    height: calc(40vw/14);
+    position: absolute;
+    left: calc(100vw/14);
+    top: calc(263vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_012 {
+    width: calc(40vw/14);
+    height: calc(40vw/14);
+    position: absolute;
+    left: calc(150vw/14);
+    top: calc(395vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_013 {
+    width: calc(35vw/14);
+    height: calc(35vw/14);
+    position: absolute;
+    left: calc(233vw/14);
+    top: calc(440vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_014 {
+    width: calc(35vw/14);
+    height: calc(35vw/14);
+    position: absolute;
+    left: calc(192vw/14);
+    bottom: calc(23vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_015 {
+    width: calc(25vw/14);
+    height: calc(25vw/14);
+    position: absolute;
+    left: calc(175vw/14);
+    bottom: calc(4vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.el_016 {
+    width: calc(80vw/14);
+    height: calc(80vw/14);
+    position: absolute;
+    left: calc(290vw/14);
+    top: calc(200vw/14);
+    background-color: black; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.noise_cont {
+    width: calc(750vw/14);
+    height: calc(500vw/14);
+    position: absolute;
+    left: calc(315vw/14);
+    top: calc(5vw/14);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    transition: opacity 5s ease;
+}
+
+.noise_cont:hover {
+    opacity: 0;
+}
+
+.frame_4 {
+    width: 100%;
+    height: calc(450vw/14);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    
+}
+
+.impulse_moons{
+    width: calc(500vw/14);
+    height: calc(400vw/14);
+    position: absolute;
+    right: calc(5vw/14);
+    top: calc(5vw/14);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.moons {
+    width: calc(500vw/14);
+    height: calc(400vw/14);
+    position: absolute;
+    right: calc(5vw/14);
+    top: calc(5vw/14);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    transition: 0.5s;
+}
+
+.moon_1{
+    width: calc(200vw/14);
+    height: calc(200vw/14);
+    position: absolute;
+    right: calc(150vw/14);
+    top: calc(115vw/14);
+    display: flex;
+    transition: 3s;
+}
+
+.moon_2{
+    width: calc(100vw/14);
+    height: calc(100vw/14);
+    position: absolute;
+    right: calc(220vw/14);
+    top: calc(200vw/14);
+    display: flex;
+    transition: 1s;
+}
+
+.text {
+    position: absolute;
+    font-family: 'Murs_Massive_Demi';
+    font-weight: 400;
+    font-size: 4.3vw;
+    transition: 0.5s;
+}
+
+.text_1 {
+    width: calc(100vw/14);
+    height: calc(100vw/14);
+    position: absolute;
+    left: calc(-30vw/14);
+    top: calc(77vw/14);
+    font-style: normal;
+    rotate: 90deg;
+}
+
+.text_2 {
+    width: calc(100vw/14);
+    height: calc(100vw/14);
+    position: absolute;
+    right: calc(-280vw/14);
+    top: calc(333vw/14);
+    font-style: normal;
+}
+
+.text_3 {
+    width: calc(100vw/14);
+    height: calc(100vw/14);
+    position: absolute;
+    left: calc(440vw/14);
+    top: calc(220vw/14);
+    font-style: normal;
+    rotate: -90deg;
+}
+
+.text_4 {
+    width: calc(100vw/14);
+    height: calc(100vw/14);
+    position: absolute;
+    left: calc(10vw/14);
+    top: calc(-13vw/14);
+    font-style: normal;
+}
+
+.new_text {
+    font-family: 'Murs_Massive_Light';
+    font-size: 4.3vw;
+    color: black;
+    font-weight: lighter;
+}
+
+.panel {
+    width: calc(305vw/14);
+    height: calc(405vw/14);
+    background-color: black;
+    position: absolute;
+    right: calc(-310vw/14);
+    top: calc(-1vw/14);
+    transition: right 2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.panel_text {
+    width: calc(100vw/14);
+    height: calc(100vw/14);
+    position: absolute;
+    right: calc(200vw/14);
+    top: calc(280vw/14);
+    font-style: normal;
+    font-weight: lighter;
+    color: white;
+    font-size: 4vw;
+    font-family: 'Murs_Massive_Light';
+    text-align: center;
+    rotate: -90deg;
+}
+
+.panel_2{
+    width: calc(230vw/14);
+    height: calc(405vw/14);
+    background-color: black;
+    position: absolute;
+    left: calc(-230vw/14);
+    top: calc(-1vw/14);
+    transition: left 2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.panel_2_text {
+    width: calc(100vw/14);
+    height: calc(100vw/14);
+    position: absolute;
+    right: calc(2vw/14);
+    top: calc(28vw/14);
+    font-style: normal;
+    font-weight: lighter;
+    color: white;
+    font-size: 4vw;
+    font-family: 'Murs_Massive_Light';
+    text-align: center;
+    rotate: 90deg;
+}
+
+.runlines {
+    width: calc(900vw/14);
+    height: calc(410vw/14);
+    right: calc(520vw/14);
+    position: relative;
+    overflow: hidden;
+    background: white;
+}
+
+.runlines .runline_1 {  
+    position: absolute;
+    width: 100%;
+    height: auto;
+    font-family: 'Murs_Massive_Light';
+    font-size: 6vw;
+    white-space: nowrap;
+}
+
+.runlines .runline_01 {
+    display: inline-block;
+    padding-left: 100%;
+    animation: frame_4_run_1 10s linear infinite;
+    cursor: pointer;
+}
+
+.runlines .runline_2 {
+    position: absolute;
+    top: calc(100vw/14);
+    width: 100%;
+    height: auto;
+    font-family: 'Murs_Massive_Light';
+    font-size: 6vw;
+    white-space: nowrap;
+}
+
+.runlines .runline_02 {
+    display: inline-block;
+    padding-left: 100%;
+    animation: frame_4_run_2 10s linear infinite;
+    cursor: pointer;
+}
+
+.runlines .runline_3 {
+    position: absolute;
+    top: calc(205vw/14);
+    width: 100%;
+    height: auto;
+    font-family: 'Murs_Massive_Light';
+    font-size: 6vw;
+    white-space: nowrap;
+}
+
+.runlines .runline_03 {
+    display: inline-block;
+    padding-left: 100%;
+    animation: frame_4_run_1 10s linear infinite;
+    cursor: pointer;
+}
+
+.runlines .runline_4 {
+    position: absolute;
+    top: calc(305vw/14);
+    width: 100%;
+    height: auto;
+    font-family: 'Murs_Massive_Light';
+    font-size: 6vw;
+    white-space: nowrap;
+}
+
+.runlines .runline_04 {
+    display: inline-block;
+    padding-left: 100%;
+    animation: frame_4_run_2 10s linear infinite;
+    cursor: pointer;
+}
+
+.frame_5 {
+    width: 100vw;
+    height: calc(100vw/14);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.frame_5 .name_line {
+    width: 100%;
+    left: 0;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Murs_Massive_Regular';
+    font-size: 2.5vw;
+}
+
+.frame_5 .line {
+    display: inline-block;
+    padding-left: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: frame_5_run 10s linear infinite;
+    cursor: pointer;
+}
+
+
+
+
+
