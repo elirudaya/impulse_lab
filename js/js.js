@@ -66,77 +66,25 @@ document.addEventListener('DOMContentLoaded', function() {
     capsuleWindow.style.visibility = 'hidden';
 });
 
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     // Получаем все элементы
-//     const clickableDivs = document.querySelectorAll('.button_3, .button_4, .button_5');
-//     const overlay = document.getElementById('overlay');
-//     const closeButtons = document.querySelectorAll('.close_window');
-//     const modals = document.querySelectorAll('.modal_window');
-
-//     // Функция для открытия модального окна
-//     function openModal(modalId) {
-//         const modal = document.getElementById(modalId);
-//         modal.style.display = 'block';
-//         overlay.style.display = 'block';
-//         document.body.style.overflow = 'hidden';
-//     }
-
-//     // Функция для закрытия модального окна
-//     function closeModal() {
-//         modals.forEach(modal => {
-//             modal.style.display = 'none';
-//         });
-//         overlay.style.display = 'none';
-//         document.body.style.overflow = '';
-//     }
-
-//     // Назначаем обработчики событий для кликабельных div
-//     clickableDivs.forEach(div => {
-//         div.addEventListener('click', function() {
-//             const modalId = this.getAttribute('data_window');
-//             openModal(modalId);
-//         });
-//     });
-
-//     // Назначаем обработчики событий для кнопок закрытия
-//     closeButtons.forEach(button => {
-//         button.addEventListener('click', closeModal);
-//     });
-
-//     // Закрытие при клике на оверлей
-//     overlay.addEventListener('click', closeModal);
-
-//     // Закрытие при нажатии ESC
-//     document.addEventListener('keydown', function(e) {
-//         if (e.key === 'Escape') {
-//             closeModal();
-//         }
-//     });
-// });
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const overlay = document.getElementById('overlay');
     const closeBtns = document.querySelectorAll('.close_window');
     const modals = document.querySelectorAll('.modal_window');
     const clickableDivs = document.querySelectorAll('.button_3, .button_4, .button_5');
 
-    // Открытие модального окна
     clickableDivs.forEach(div => {
         div.addEventListener('click', function() {
             const modalId = this.getAttribute('data_window');
             document.getElementById(modalId).style.display = 'block';
             overlay.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Блокируем скролл страницы
+            document.body.style.overflow = 'hidden'; 
         });
     });
 
-    // Закрытие модального окна
     function closeModal() {
         modals.forEach(modal => modal.style.display = 'none');
         overlay.style.display = 'none';
-        document.body.style.overflow = ''; // Возвращаем скролл
+        document.body.style.overflow = ''; 
     }
 
     closeBtns.forEach(btn => {
@@ -145,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     overlay.addEventListener('click', closeModal);
 
-    // Закрытие по ESC
+
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') closeModal();
     });
